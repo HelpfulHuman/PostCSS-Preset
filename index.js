@@ -192,6 +192,7 @@ function buildPlugins (config) {
  */
 function buildConfig (config) {
   if (typeof config !== "function") {
+    if ( ! config) config = {};
     return Object.assign(config, {
       plugins: buildPlugins(config),
     });

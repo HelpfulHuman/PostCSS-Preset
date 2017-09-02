@@ -24,20 +24,14 @@ If you're using PostCSS directly with `postcss-cli` command line tool, you can c
 // postcss.config.js
 var preset = require("@helpfulhuman/postcss-preset");
 
-module.exports = preset.buildConfig({
-  input: "./styles/index.css",
-  output: "./public/main.css",
-});
+module.exports = preset.buildConfig({ /* options */ });
 ```
 
-#### `buildConfig()` Options
+Now you can the `postcss` command line utility to build your CSS.
 
-> **Note:** `buildConfig()` supports all of the [plugin options](#buildplugins-options) as well.
-
-Name | Type | Description
------|------|------------
-**input** | `String` | _Optional._ The relative filepath to the root CSS file you want to load.
-**output** | `String` | _Optional._ The relative filepath to where the final CSS file should be saved.
+```
+postcss src/index.css --map --output public/main.css
+```
 
 ### Plugins Only
 
@@ -48,10 +42,10 @@ Alternatively, if you're in a situation where you don't need a full configuratio
 ```js
 var preset = require("@helpfulhuman/postcss-preset");
 
-var plugins = preset.buildPlugins({ /* buildPlugin options */ });
+var plugins = preset.buildPlugins({ /* options */ });
 ```
 
-#### `buildPlugins()` Options
+## Options
 
 Name | Type | Description
 -----|------|------------
