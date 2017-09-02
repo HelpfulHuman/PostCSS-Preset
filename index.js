@@ -1,7 +1,46 @@
-var filters = require("pleeease-filters");
-var autoprefixer = require("autoprefixer");
-var cssnano = require("cssnano");
-var pixrem = require("pixrem");
+var filters       = require("pleeease-filters");
+var autoprefixer  = require("autoprefixer");
+var cssnano       = require("cssnano");
+var pixrem        = require("pixrem");
+
+/**
+ * Set the mode constants.
+ */
+const MODE_DEFAULT  = "MODE_DEFAULT";
+const MODE_MODULAR  = "MODE_MODULAR";
+const MODE_WEBPACK  = "MODE_WEBPACK";
+
+/**
+ * Throws an error if an invalid mode is provided.
+ *
+ * @param  {*} buildMode
+ */
+function validateMode (buildMode) {
+  if (
+    buildMode !== MODE_DEFAULT &&
+    buildMode !== MODE_MODULAR &&
+    buildMode !== MODE_WEBPACK
+  ) {
+    throw new Error("Invalid configuration: `buildMode` is set to an unknown value `"+buildMode+"`.  Expected `MODE_DEFAULT`, `MODE_MODULAR` or `MODE_WEBPACK`.");
+  }
+}
+
+/**
+ * Omit keys from the object based on the given array of keys.
+ *
+ * @param  {String[]} keys
+ * @param  {Object} obj
+ * @return {Object}
+ */
+function omit (keys, obj) {
+  var out = {};
+  for (var k in obj) {
+    if (keys.indexOf(k) === -1) {
+      out[k] = obj[k];
+    }
+  }
+  return out;
+}
 
 /**
  * Returns true if the legacy browsers are to be supported based on the
@@ -29,6 +68,7 @@ function getPluginDefaults (config) {
   return Object.assign({
     autoreset: null,
     baseFontSize: 16,
+    buildMode: MODE_DEFAULT,
     browsers: browsers,
     dontConvertPx: false,
     enableShortRules: true,
@@ -51,12 +91,19 @@ function buildPlugins (config) {
   // Get config with defaults
   config = getPluginDefaults(config);
 
+  // Validate the build mode
+  validateMode(config.buildMode);
+
   // Prepare the array that will contain the outputted plugins
   var plugins = [];
 
   // Helper for loading and instantiating postcss-specific plugins
   var loadPlugin = function (plugin, options) {
     plugins.push(require("postcss-"+plugin)(options));
+  }
+
+  if (config.buildMode === MODE_DEFAULT) {
+    loadPlugin("easy-import");
   }
 
   if (config.autoreset !== null) {
@@ -138,32 +185,24 @@ function buildPlugins (config) {
 }
 
 /**
- * Returns the given config with defaults, specifically for building a PostCSS config.
- *
- * @param  {Object} config
- * @return {Object}
- */
-function getConfigDefaults (config) {
-  return Object.assign({
-    // TODO: add config defaults
-  }, config);
-}
-
-/**
  * Returns a PostCSS configuration with preset plugins.
  *
  * @param  {Object} config
  * @return {Object}
  */
 function buildConfig (config) {
-  config = getConfigDefaults(config);
-
+  var pluginConfig = omit(["input", "output"], config);
   return {
-    plugins: buildPlugins(config),
+    input: config.input,
+    output: config.output,
+    plugins: buildPlugins(pluginConfig),
   };
 }
 
 module.exports = {
+  MODE_DEFAULT: MODE_DEFAULT,
+  MODE_MODULAR: MODE_MODULAR,
+  MODE_WEBPACK: MODE_WEBPACK,
   buildPlugins: buildPlugins,
   buildConfig: buildConfig,
 };
