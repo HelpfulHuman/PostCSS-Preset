@@ -27,6 +27,7 @@ function getPluginDefaults (config) {
   var useLegacy = supportsLegacyBrowsers(config);
 
   return Object.assign({
+    autoreset: null,
     baseFontSize: 16,
     browsers: browsers,
     dontConvertPx: false,
@@ -58,6 +59,10 @@ function buildPlugins (config) {
     plugins.push(require("postcss-"+plugin)(options));
   }
 
+  if (config.autoreset !== null) {
+    loadPlugin("autoreset");
+  }
+
   if (config.enableShortRules === true) {
     loadPlugin("short");
   }
@@ -81,6 +86,7 @@ function buildPlugins (config) {
     loadPlugin("font-family-system-ui");
     loadPlugin("font-variant");
     plugins.push(filters());
+    loadPlugin("initial");
   }
 
   if (config.pseudoFallbacks === true) {
