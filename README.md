@@ -1,4 +1,4 @@
-# Helpful Human PostCSS Preset
+# Helpful Human's PostCSS Presets
 
 This library provides a default set of PostCSS plugins and configurations based on the internal standards employed at [Helpful Human](http://helpfulhuman.com).
 
@@ -6,7 +6,7 @@ This library provides a default set of PostCSS plugins and configurations based 
 
 - Support for [automatic vendor prefixing](https://github.com/postcss/autoprefixer).
 - Automatic conversion of [`px` to `em`](https://github.com/macropodhq/postcss-px-to-em).
-- Optimize the build for production by discarding comments and duplicates, consolidating rules and elements and more using [cssnano](http://cssnano.co/).
+- Optimize the build for production by removing comments, discarding duplicates, consolidating rules and elements, and more using [cssnano](http://cssnano.co/).
 
 ## How To Use
 
@@ -16,7 +16,7 @@ Install via `npm`:
 npm install --save-dev @helpfulhuman/postcss-preset
 ```
 
-## `postcss.config.js` Usage
+### As PostCSS Config
 
 The `buildConfig()` method allows you to quickly create the entire config needed for PostCSS.  Just create a `postcss.config.js` file with the following code:
 
@@ -26,15 +26,15 @@ var preset = require("@helpfulhuman/postcss-preset");
 module.exports = preset.buildConfig({ /* buildConfig options */ });
 ```
 
-### `buildConfig()` Options
+#### `buildConfig()` Options
 
-> **Note:** `buildConfig()` supports all of the listed [plugin options]() as well.
+> **Note:** `buildConfig()` supports all of the listed [plugin options](#buildplugins-options) as well.
 
 Name | Type | Description
 -----|------|------------
 **dest** | `String` | The filepath to where the final CSS file should be saved.  _Defaults to `{cwd}/public/main.css`._
 
-## Plugins Only Usage
+### Plugins Only
 
 Alternatively, if you're in a situation where you don't need a full configuration for PostCSS, you can get an array of just the configured plugins using the `buildPlugins()` method.
 
@@ -44,7 +44,7 @@ var preset = require("@helpfulhuman/postcss-preset");
 var plugins = preset.buildPlugins({ /* buildPlugin options */ })
 ```
 
-### `buildPlugins()` Options
+#### `buildPlugins()` Options
 
 Name | Type | Description
 -----|------|------------
