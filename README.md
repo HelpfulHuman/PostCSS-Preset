@@ -24,7 +24,13 @@ If you're using PostCSS directly with `postcss-cli` command line tool, you can c
 // postcss.config.js
 var preset = require("@helpfulhuman/postcss-preset");
 
-module.exports = preset.buildConfig({ /* options */ });
+// no arguments are required
+module.exports = preset.buildConfig({
+  variables: {
+    bodyFont: "Helvetica Neue, Arial, sans-serif",
+    brandColor: "#CC3300",
+  },
+});
 ```
 
 Now you can the `postcss` command line utility to build your CSS.
@@ -59,3 +65,4 @@ Name | Type | Description
 **pseudoFallbacks** | `Bool` | Provides single colon fallbacks for `::pseudo` elements including `before`, `after`, `first-letter`, `first-line`, `first-child`, `last-child`, `hover`, `focus`, and `active` in order to support older browsers when set to `true`. _Defaults to `legacyBrowsers`' value._
 **remFallback** | `Bool` | Helps support older browsers by automatically adding a `px` fallback for rules using `rem` units.  _Defaults to `legacyBrowsers`' value._
 **rgbaFallback** | `Bool` | Enables `rgba()` to `rgb()` fallback to be added for legacy browsers when set to `true`. _Defaults to `legacyBrowsers`' value._
+**variables** | `Object` | Provide an object literal of variables to be injected and made globally available in your stylesheets.

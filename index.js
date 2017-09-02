@@ -77,6 +77,7 @@ function getPluginDefaults (config) {
     nextCSS: true,
     remFallback: useLegacy,
     rgbaFallback: useLegacy,
+    variables: {},
   }, config);
 }
 
@@ -105,6 +106,10 @@ function buildPlugins (config) {
   if (config.buildMode === MODE_DEFAULT) {
     loadPlugin("partial-import");
   }
+
+  loadPlugin("advanced-variables", {
+    variables: config.variables,
+  });
 
   if (config.autoreset !== null) {
     loadPlugin("autoreset");
