@@ -119,7 +119,7 @@ function buildPlugins (config) {
     loadPlugin("apply");
     loadPlugin("calc");
     loadPlugin("custom-media");
-    loadPlugin("media-min-max");
+    loadPlugin("media-minmax");
     loadPlugin("custom-selectors");
     loadPlugin("nesting");
     loadPlugin("image-set-polyfill");
