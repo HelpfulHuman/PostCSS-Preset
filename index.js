@@ -35,19 +35,18 @@ function getConfigDefaults (config) {
  * @return {Array}
  */
 function buildPlugins (config) {
-  config = getPluginDefaults(config);
   var plugins = [];
+  config = getPluginDefaults(config);
 
   plugins.push(px2em({ base: 16 }));
   plugins.push(autoprefixer({ browsers: config.browsers }));
 
-  if (config.optimize) {
+  if (config.optimize === true) {
    plugins.push(cssnano({ preset: "default" }));
   }
 
   return plugins;
 }
-
 
 /**
  * Returns a PostCSS configuration with preset plugins.
