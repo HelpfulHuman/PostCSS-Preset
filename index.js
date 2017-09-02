@@ -103,7 +103,7 @@ function buildPlugins (config) {
   }
 
   if (config.buildMode === MODE_DEFAULT) {
-    loadPlugin("easy-import");
+    loadPlugin("partial-import");
   }
 
   if (config.autoreset !== null) {
