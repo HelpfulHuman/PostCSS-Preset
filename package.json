@@ -4,7 +4,7 @@
   "description": "A tool for creating PostCSS configurations based on internal standards at Helpful Human.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": ""
   },
   "repository": {
     "type": "git",
