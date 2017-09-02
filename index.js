@@ -64,6 +64,6 @@ function buildConfig (config) {
 }
 
 module.exports = {
-  buildConfig: buildConfig,
   buildPlugins: buildPlugins,
+  buildConfig: buildConfig,
 };
