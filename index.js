@@ -185,17 +185,23 @@ function buildPlugins (config) {
 }
 
 /**
- * Returns a PostCSS configuration with preset plugins.
+ * Returns a PostCSS configuration with preset plugins set on top.
  *
- * @param  {Object} config
- * @return {Object}
+ * @param  {Object|Function} config
+ * @return {Object|Function}
  */
 function buildConfig (config) {
-  var pluginConfig = omit(["input", "output"], config);
-  return {
-    input: config.input,
-    output: config.output,
-    plugins: buildPlugins(pluginConfig),
+  if (typeof config !== "function") {
+    return Object.assign(config, {
+      plugins: buildPlugins(config),
+    });
+  }
+
+  return function (ctx) {
+    config = config(ctx);
+    return Object.assign(config, {
+      plugins: buildPlugins(config),
+    });
   };
 }
 
