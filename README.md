@@ -50,3 +50,4 @@ Name | Type | Description
 -----|------|------------
 **browsers** | `String[]` | An array of strings used for adding vendor prefixes automatically.  See [autoprefixer's `browser` documentation](https://github.com/postcss/autoprefixer#browsers) for more information.  _Defaults to `["last 2 version", "ie >= 10"]`_
 **optimize** | `Bool` | Optimizes the final output for production releases.  _Defaults to `true` when the `NODE_ENV` is set to `production`._
+**pureCSS** | `Bool` | When `true`, any plugins that add preprocessor functionality or non-native CSS functionality will be removed. _Defaults to `false`._

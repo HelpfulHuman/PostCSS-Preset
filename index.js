@@ -12,6 +12,7 @@ function getPluginDefaults (config) {
   return Object.assign({
     browsers: ["last 2 version", "ie >= 10"],
     optimize: (process.env.NODE_ENV === "production"),
+    pureCSS: false,
   }, config);
 }
 
