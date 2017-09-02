@@ -51,7 +51,6 @@ Name | Type | Description
 -----|------|------------
 **autoreset** | `Object` | Enables the [autoreset plugin](https://github.com/maximkoretskiy/postcss-autoreset) when a configuration object is provided, and the plugin is disabled when set to `null`. Recommended for use with CSS modules. _Defaults to `null`._
 **browsers** | `String[]` | An array of strings used for automatically adding vendor prefixes.  See [autoprefixer's `browser` documentation](https://github.com/postcss/autoprefixer#browsers) for more information.  _Defaults to `["last 2 version", "ie >= 10"]`_
-**dontConvertPx** | `Bool` | Disables the [px-to-em plugin](https://npmjs.com/package/postcss-px-to-em) from performing automatic conversion of `px` units to `em`.  _Defaults to `false`._
 **enableShortRules** | `Bool` | Enables the use of [short rule notation](https://www.npmjs.com/package/postcss-short) when set to `true`.  _Defaults to `true`._
 **legacyBrowsers** | `Bool` | Enables broadstroke legacy browser support (like IE9) when set to `true`. _Defaults to `false`._
 **buildMode** | `Enum` | Must be set to a value of `MODE_DEFAULT`, `MODE_MODULES` or `MODE_WEBPACK`.  _Defaults to `MODE_DEFAULT`._

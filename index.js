@@ -70,7 +70,7 @@ function getPluginDefaults (config) {
     baseFontSize: 16,
     buildMode: MODE_DEFAULT,
     browsers: browsers,
-    dontConvertPx: false,
+    // dontConvertPx: false,
     enableShortRules: true,
     optimize: (process.env.NODE_ENV === "production"),
     pesudoFallbacks: useLegacy,
@@ -165,9 +165,9 @@ function buildPlugins (config) {
     loadPlugin("color-rgba-fallback");
   }
 
-  if (config.dontConvertPx !== true) {
-    loadPlugin("px-to-em", { base: config.baseFontSize });
-  }
+  // if (config.dontConvertPx !== true) {
+  //   loadPlugin("px-to-em", { base: config.baseFontSize });
+  // }
 
   if (config.remFallback === true) {
     plugins.push(pixrem());
