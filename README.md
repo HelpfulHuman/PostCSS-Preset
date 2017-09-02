@@ -2,11 +2,6 @@
 
 This library provides a default set of PostCSS plugins and configurations based on the internal standards employed at [Helpful Human](http://helpfulhuman.com).
 
-- Support for [automatic vendor prefixing](https://npmjs.com/package/autoprefixer).
-- Allow future CSS functionality to be used today.
-- Automatic conversion of [`px` to `em`](https://github.com/macropodhq/postcss-px-to-em).
-- Optimization for production builds using [cssnano](http://cssnano.co/).
-
 ## How To Use
 
 Install via `npm`:
