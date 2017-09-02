@@ -50,7 +50,6 @@
     "postcss-nesting": "^4.1.0",
     "postcss-pseudo-class-any-link": "^4.0.0",
     "postcss-pseudoelements": "^5.0.0",
-    "postcss-px-to-em": "^1.0.1",
     "postcss-replace-overflow-wrap": "^2.0.0",
     "postcss-selector-matches": "^3.0.1",
     "postcss-selector-not": "^3.0.1",
