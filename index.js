@@ -30,6 +30,7 @@ function getPluginDefaults (config) {
     baseFontSize: 16,
     browsers: browsers,
     dontConvertPx: false,
+    enableShortRules: true,
     optimize: (process.env.NODE_ENV === "production"),
     pesudoFallbacks: useLegacy,
     nextCSS: true,
@@ -55,6 +56,10 @@ function buildPlugins (config) {
   // Helper for loading and instantiating postcss-specific plugins
   var loadPlugin = function (plugin, options) {
     plugins.push(require("postcss-"+plugin)(options));
+  }
+
+  if (config.enableShortRules === true) {
+    loadPlugin("short");
   }
 
   if (config.nextCSS === true) {
