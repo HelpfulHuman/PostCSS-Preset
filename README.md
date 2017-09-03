@@ -54,7 +54,7 @@ var plugins = preset.buildPlugins({ /* options */ });
 
 Name | Type | Description
 -----|------|------------
-**autoreset** | `Object` | Enables the [autoreset plugin](https://github.com/maximkoretskiy/postcss-autoreset) when a configuration object is provided, and the plugin is disabled when set to `null`. Recommended for use with CSS modules. _Defaults to `null`._
+**autoreset** | `Bool` | Enables the [autoreset plugin](https://github.com/maximkoretskiy/postcss-autoreset) when when set to `true`. Recommended for use with CSS modules. _Defaults to `false`._
 **browsers** | `String[]` | An array of strings used for automatically adding vendor prefixes.  See [autoprefixer's `browser` documentation](https://github.com/postcss/autoprefixer#browsers) for more information.  _Defaults to `["last 2 version", "ie >= 10"]`_
 **enableShortRules** | `Bool` | Enables the use of [short rule notation](https://www.npmjs.com/package/postcss-short) when set to `true`.  _Defaults to `true`._
 **legacyBrowsers** | `Bool` | Enables broadstroke legacy browser support (like IE9) when set to `true`. _Defaults to `false`._
