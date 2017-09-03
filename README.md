@@ -119,7 +119,7 @@ Key | Plugin
 **colorFunction** | [postcss-color-function](https://npmjs.com/package/postcss-color-function)
 **fontFamilySystemUi** | [postcss-font-family-system-ui](https://npmjs.com/package/postcss-font-family-system-ui)
 **fontVariant** | [postcss-font-variant](https://npmjs.com/package/postcss-font-variant)
-**filters** | [postcss-pleeease-filters](https://npmjs.com/package/postcss-pleeease-filters)
+**filters** | [pleeease-filters](https://npmjs.com/package/pleeease-filters)
 **initial** | [postcss-initial](https://npmjs.com/package/postcss-initial)
 **pseudoElements** | [postcss-pseudoelements](https://npmjs.com/package/postcss-pseudoelements)
 **selectorMatches** | [postcss-selector-matches](https://npmjs.com/package/postcss-selector-matches)
