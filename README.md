@@ -124,7 +124,7 @@ Key | Plugin
 **pseudoElements** | [postcss-pseudoelements](https://npmjs.com/package/postcss-pseudoelements)
 **selectorMatches** | [postcss-selector-matches](https://npmjs.com/package/postcss-selector-matches)
 **selectorNot** | [postcss-selector-not](https://npmjs.com/package/postcss-selector-not)
-**psudoClassAnyLink** | [postcss-pseudo-class-any-link](https://npmjs.com/package/postcss-pseudo-class-any-link)
+**pseudoClassAnyLink** | [postcss-pseudo-class-any-link](https://npmjs.com/package/postcss-pseudo-class-any-link)
 **replaceOverflowWrap** | [postcss-replace-overflow-wrap](https://npmjs.com/package/postcss-replace-overflow-wrap)
 **colorRgbaFallback** | [postcss-color-rgba-fallback](https://npmjs.com/package/postcss-color-rgba-fallback)
 **pixrem** | [pixrem](https://npmjs.com/package/pixrem)
