@@ -18,7 +18,7 @@ The `buildConfig()` method allows you to quickly create the entire config needed
 
 If you're using PostCSS directly with `postcss-cli` command line tool, you can create a `postcss.config.js` file and export the results of the `buildConfig()` method.  This approach is likely the best solution for adding PostCSS support to codebases where modern tools like Webpack are not available or not needed.
 
-> **Note:** The [postcss-partial-import plugin](https://npmjs.com/package/postcss-partial-import) is added when using the default `buildMode`.  This means you can use `@import` with relative filepaths or globs to include files in your bundled file, like you would with SASS or Stylus.
+> **Note:** The [postcss-partial-import plugin](https://npmjs.com/package/postcss-partial-import) is added when using the default `buildMode`.  This means you can use `@import` with relative filepaths or globs to include files in your bundled CSS, like you would with SASS or Stylus.
 
 ```js
 var preset = require("@helpfulhuman/postcss-preset");
@@ -32,7 +32,7 @@ module.exports = preset.buildConfig({
 });
 ```
 
-Now you can the `postcss` command line utility to build your CSS.
+Now you can use the `postcss` command line utility to build your CSS.
 
 ```
 postcss src/index.css --map --output public/main.css
