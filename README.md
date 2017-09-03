@@ -99,6 +99,7 @@ Below is a list of all of the plugins you can configure and their corresponding 
 Key | Plugin
 ----|-------
 **partialImport** | [postcss-partial-import](https://npmjs.com/package/postcss-partial-import)
+**mixins** | [postcss-mixins](https://npmjs.com/package/postcss-mixins)
 **advancedVars** | [postcss-advanced-variables](https://npmjs.com/package/postcss-advanced-variables)
 **autoreset** | [postcss-autoreset](https://npmjs.com/package/postcss-autoreset)
 **short** | [postcss-short](https://npmjs.com/package/postcss-short)
@@ -109,6 +110,9 @@ Key | Plugin
 **mediaMinMax** | [postcss-media-minmax](https://npmjs.com/package/postcss-media-minmax)
 **customSelectors** | [postcss-custom-selectors](https://npmjs.com/package/postcss-custom-selectors)
 **nesting** | [postcss-nesting](https://npmjs.com/package/postcss-nesting)
+**atRoot** | [postcss-at-root](https://npmjs.com/package/postcss-atroot)
+**propertyLookup** | [postcss-property-lookup](https://npmjs.com/package/postcss-property-lookup)
+**extend** | [postcss-extend](https://npmjs.com/package/postcss-extend)
 **imageSet** | [postcss-image-set-polyfill](https://npmjs.com/package/postcss-image-set-polyfill)
 **attributeCaseInsensitive** | [postcss-attribute-case-insensitive](https://npmjs.com/package/postcss-attribute-case-insensitive)
 **colorHwb** | [postcss-color-hwb](https://npmjs.com/package/postcss-color-hwb)
